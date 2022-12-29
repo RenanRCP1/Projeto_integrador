@@ -1,7 +1,7 @@
 <template>
     <q-layout view="hHh LpR fFf">
 
-        <q-header elevated class=" bg-dark text-white q-mx-none " height-hint="98">
+        <q-header elevated class="glossy bg-dark text-white q-mx-none " height-hint="98">
             <q-toolbar class="col-12 q-py-sm ">
                 <q-btn dense flat round icon="menu" @click="toggleLeftDrawer" />
 
@@ -13,15 +13,15 @@
                     Banca Cambauba
                 </q-toolbar-title>
 
-                <q-input class="bg-white col-xs-4 col-md-6 q-mr-xl " dense v-model="search" type="search">
+                <q-input class=" bg-white col-xs-4 col-md-6 q-mr-xl q-pa-none" dense v-model="search" type="search">
                     <template v-slot:append>
                         <q-icon color="white" class="bg-orange-5" name="search" size="40px" />
                     </template>
                 </q-input>
 
-                <q-tabs class="col-md-3 text-white full-width " align="left">
+                <q-tabs class="col-md-3 col-xs-1 text-white " align="left">
                     <q-icon size="25px" color="orange-5" name="favorite" />
-                    <q-route-tab class="q-pl-sm" to="/page6" label="Favoritos" />
+                    <q-route-tab class="q-pl-sm " to="/page6" label="Favoritos" />
                     <font-awesome-icon class="text-orange-5 text-h5" :icon="['fas', 'user']" />
                     <q-route-tab class="q-pl-sm" to="/page7" label="Entrar" />
                     <font-awesome-icon class="text-orange-5 text-h5" :icon="['fas', 'bag-shopping']" />
@@ -30,15 +30,15 @@
             </q-toolbar>
 
 
-            <q-tabs class="bg-orange-5 text-white" align="left">
-                <q-route-tab to="/page1" label="Todas as categorias" />
-                <q-route-tab to="/page2" label="Revistas" />
-                <q-route-tab to="/page3" label="Mangás" />
-                <q-route-tab to="/page3" label="HQS" />
+            <q-tabs outlined class=" bg-orange-5 text-white" align="justify">
+                <q-route-tab class="glossy " to="/page1" label="Todas as categorias" />
+                <q-route-tab class="glossy" to="/page2" label="Revistas" />
+                <q-route-tab class="glossy" to="/page3" label="Mangás" />
+                <q-route-tab class="glossy" to="/page3" label="HQS" />
             </q-tabs>
         </q-header>
 
-        <q-drawer class="text-dark" show-if-above v-model="leftDrawerOpen" side="left" behavior="desktop" elevated>
+        <q-drawer show-if-above class="text-dark" v-model="leftDrawerOpen" side="left" elevated>
             <!-- drawer content -->
             <q-scroll-area class="fit">
                 <q-list padding class="menu-list">
@@ -89,11 +89,11 @@
             <router-view />
         </q-page-container>
 
-        <q-footer elevated class="bg-dark text-white">
+        <q-footer elevated class=" glossy bg-dark text-white">
             <q-toolbar>
-                <q-btn dense flat round icon="menu" @click="toggleLeftDrawer" />
-                <q-toolbar-title>
-                    Banca Cambauba
+                <q-toolbar-title class="text-center text-subtitle1">
+                    Banca Cambauba <br />
+                    Rua Cambaúba, 1051 - Jardim Guanabara, Rio de Janeiro - RJ, 21940-005
                 </q-toolbar-title>
             </q-toolbar>
         </q-footer>
@@ -118,3 +118,7 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+
+</style>
